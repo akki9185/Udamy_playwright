@@ -18,7 +18,7 @@ test('Launch Browser in normal Way with  cookies', async ({browser, page})=>
 {
     // const context = await browser.newContext();
     // const page = await context.newPage();
-    await page.goto('https://www.google.com/');
+    await page.goto('https://www.flipkart.com/');
 });
 
 
