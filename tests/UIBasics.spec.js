@@ -62,6 +62,6 @@ test.only('NebulaLogin_Email_Wrong', async ({page})=>   // with only keyword we 
     await page.locator('input#password').fill('Pa$$w0rd!');
     await page.locator('button[type="submit"]').click();
     console.log( await page.locator('[class*="mui-kowl1"]').textContent());
-    // expect(await page.locator('[class*="mui-kowl1"]').textContent()).toHaveText('Invalid email or password'); // with toHaveText we can verify the text of the element and if the text is not matching then it will throw an error and fail the test case
+    await expect(page.locator('[class*="mui-kowl1"]')).toContainText("Invalid Email or Password"); // with toHaveText we can verify the text of the element and if the text is not matching then it will throw an error and fail the test case
    
 });
