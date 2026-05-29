@@ -49,11 +49,36 @@ test('Subscription page', async ({page})=>   // with only keyword we can run onl
     const email = page.locator('input#email');
     const password = page.locator('input#password');
     const submitButton = page.locator('button[type="submit"]');
+    const subscriptionHeading = page.locator('h5.mui-s2r9jq'); 
     await page.goto('http://206.189.23.26:3003/webapp/subscription');
-    console.log(await page.locator('h5.mui-s2r9jq').nth(0).textContent());
-    console.log(await page.locator('h5.mui-s2r9jq').nth(1).textContent());
-    console.log(await page.locator('h5.mui-s2r9jq').nth(2).textContent());
-    console.log(await page.locator('h5.mui-s2r9jq').nth(3).textContent());
-    console.log(await page.locator('h5.mui-s2r9jq').nth(4).textContent());
+    console.log(await subscriptionHeading.nth(0).textContent());
+    console.log(await subscriptionHeading.nth(1).textContent());
+    console.log(await subscriptionHeading.nth(2).textContent());
+    console.log(await subscriptionHeading.nth(3).textContent());
+    console.log(await subscriptionHeading.nth(4).textContent());
+    console.log(await subscriptionHeading.first().textContent());
+    console.log(await subscriptionHeading.last().textContent());
+    console.log('-----------------------');
+    const cardName = await subscriptionHeading.allTextContents();
+    console.log(cardName);
+    
+        
+});
+
+test.only('Subscription page_Wait Dynamically', async ({page})=>   // with only keyword we can run only this test case and ignore all other test cases in the file
+{
+
+    const email = page.locator('input#email');
+    const password = page.locator('input#password');
+    const submitButton = page.locator('button[type="submit"]');
+    const subscriptionHeading = page.locator('h5.mui-s2r9jq'); 
+    await page.goto('http://206.189.23.26:3003/webapp/subscription');
+    // await page.waitForLoadState('networkidle'); // First Method with waitForLoadState we can wait for the page to load completely and if the page is not loaded then it will throw an error and fail the test case
+    await subscriptionHeading.first().waitFor(); // Second Method with waitFor we can wait for the element to be visible and if the element is not visible then it will throw an error and fail the test case
+    console.log('-----------------------');
+    const cardName = await subscriptionHeading.allTextContents(); 
+    console.log(cardName);
+    //hello
+    
         
 });
