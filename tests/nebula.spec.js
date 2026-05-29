@@ -65,7 +65,7 @@ test('Subscription page', async ({page})=>   // with only keyword we can run onl
         
 });
 
-test.only('Subscription page_Wait Dynamically', async ({page})=>   // with only keyword we can run only this test case and ignore all other test cases in the file
+test('Subscription page_Wait Dynamically', async ({page})=>   // with only keyword we can run only this test case and ignore all other test cases in the file
 {
 
     const email = page.locator('input#email');
