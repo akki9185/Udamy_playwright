@@ -78,6 +78,7 @@ test.only('Subscription page_Wait Dynamically', async ({page})=>   // with only 
     console.log('-----------------------');
     const cardName = await subscriptionHeading.allTextContents(); 
     console.log(cardName);
+    //hello
     
         
 });
