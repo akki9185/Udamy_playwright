@@ -43,7 +43,7 @@ test('NebulaLogin_Correct Data', async ({page})=>   // with only keyword we can 
 
 
 
-test.only('Subscription page', async ({page})=>   // with only keyword we can run only this test case and ignore all other test cases in the file
+test('Subscription page', async ({page})=>   // with only keyword we can run only this test case and ignore all other test cases in the file
 {
 
     const email = page.locator('input#email');
