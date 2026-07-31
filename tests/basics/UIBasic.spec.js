@@ -25,13 +25,13 @@ test("Browser without page context, Page as fixture", async ({ page }) => {
     await page.goto("https://rahulshettyacademy.com/loginpagePractice");
 })
 
-test.only("Make sance", async ({ page }) => {
+test("Make sance", async ({ page }) => {
     await page.goto("https://www.flipkart.com");
     console.log("Make sance")
 })
 
 
-test.only("13.basics Codes", async ({ page }) => {
+test("13.basics Codes", async ({ page }) => {
     await page.goto("https://google.com");
     console.log(await page.title());
     await expect(page).toHaveTitle("Google");
